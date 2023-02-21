@@ -1,0 +1,59 @@
+{
+  "name": "cli-cmd-ast",
+  "version": "0.0.1",
+  "description": "CLI command ast parser manipulate program bash powershell generic agnostic.",
+  "main": "./app/dist/esm/cliCmdAst.js",
+  "types": "./app/dist/esm/cliCmdAst.d.ts",
+  "bin": "./app/dist/esm/cli/cliCmdAst-cli.js",
+  "exports": {
+    "node": {
+      "import": "./app/dist/esm/cliCmdAst.js",
+      "require": "./app/dist/cjs/cliCmdAst.js"
+    },
+    "default": "./app/dist/esm/cliCmdAst.js"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.prod.config.js && renamer --find /\\.js$/i --replace .mjs app/dist/esm/**",
+    "dev": "npm run devNode",
+    "devWeb": "rollup --config rollup.web.dev.config.js -w",
+    "devNode": "rollup --config rollup.node.dev.config.js -w",
+    "deploy": "npm run build && npm publish",
+    "repl": "node ./repl/dist/cliCmdAst-repl.js",
+    "start": "npm run repl",
+    "buildTest": "rollup --config rollup.node.test.config.js",
+    "test": "npm run buildTest && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianMairinger/cliCmdAst.git"
+  },
+  "keywords": [
+  "cli",
+  "cmd",
+  "ast"
+],
+  "author": "maximilianMairinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilianMairinger/cliCmdAst/issues"
+  },
+  "homepage": "https://github.com/maximilianMairinger/cliCmdAst#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-typescript": "^5.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^13.13.4",
+    "commander": "^6.2.1",
+    "jest": "^26.6.3",
+    "renamer": "^4.0.0",
+    "rollup": "^2.18.1",
+    "tslib": "2.0.0",
+    "typescript": "^4.0.2",
+    "webpack-merge": "^5.0.9"
+  },
+  "dependencies": {
+    "req-package-json": "^2.0.0"
+  }
+}
