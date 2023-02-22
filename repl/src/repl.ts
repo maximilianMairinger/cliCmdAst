@@ -1,4 +1,4 @@
-import cliCmdAst from "../../app/src/cliCmdAst"
+import { toAst, toCmd } from "../../app/src/cliCmdAst"
 //const testElem = document.querySelector("#test")
 
-cliCmdAst()
+console.log(toAst(`npm "--org  google" cmd --flag --option1 val -v=1.1`))
