@@ -4,7 +4,6 @@
   "description": "CLI command ast parser manipulate program bash powershell generic agnostic.",
   "main": "./app/dist/esm/cliCmdAst.js",
   "types": "./app/dist/esm/cliCmdAst.d.ts",
-  "bin": "./app/dist/esm/cli/cliCmdAst-cli.js",
   "exports": {
     "node": {
       "import": "./app/dist/esm/cliCmdAst.js",
